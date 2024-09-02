@@ -83,6 +83,9 @@ func TestSetAddress(t *testing.T) {
 
 	defer db.Close()
 
+	store := NewParcelStore(db)
+	parcel := getTestParcel()
+
 	// add
 	// добавьте новую посылку в БД, убедитесь в отсутствии ошибки и наличии идентификатора
 	id, err := store.Add(parcel)
@@ -115,6 +118,8 @@ func TestSetStatus(t *testing.T) {
 
 	defer db.Close()
 
+	store := NewParcelStore(db)
+
 	// add
 	// добавьте новую посылку в БД, убедитесь в отсутствии ошибки и наличии идентификатора
 
@@ -146,6 +151,8 @@ func TestGetByClient(t *testing.T) {
 	}
 
 	defer db.Close()
+
+	store := NewParcelStore(db)
 
 	parcels := []Parcel{
 		getTestParcel(),
