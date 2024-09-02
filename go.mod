@@ -3,7 +3,9 @@ module github.com/Yandex-Practicum/go-db-sql-final
 go 1.21
 
 require (
+	github.com/mattermost/mattermost-server/v6 v6.7.2
 	github.com/stretchr/testify v1.8.4
+	golang.org/x/tools v0.19.0
 	modernc.org/sqlite v1.32.0
 )
 
@@ -19,7 +21,6 @@ require (
 	github.com/remyoudompheng/bigfft v0.0.0-20230129092748-24d4a6f8daec // indirect
 	golang.org/x/mod v0.16.0 // indirect
 	golang.org/x/sys v0.22.0 // indirect
-	golang.org/x/tools v0.19.0 // indirect
 	golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 	lukechampine.com/uint128 v1.2.0 // indirect
