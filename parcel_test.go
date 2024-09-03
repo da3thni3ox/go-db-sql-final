@@ -34,9 +34,7 @@ func TestAddGetDelete(t *testing.T) {
 	// prepare
 	db, err := sql.Open("sqlite", "tracker.db") // настройте подключение к БД
 
-	if err != nil {
-		assert.NoError(t, err)
-	}
+	assert.NoError(t, err)
 
 	defer db.Close()
 
@@ -56,10 +54,7 @@ func TestAddGetDelete(t *testing.T) {
 
 	gotParcel, err := store.Get(id)
 	require.NoError(t, err)
-	require.Equal(t, parcel.Client, gotParcel.Client)
-	require.Equal(t, parcel.Status, gotParcel.Status)
-	require.Equal(t, parcel.Address, gotParcel.Address)
-	require.Equal(t, parcel.CreatedAt, gotParcel.CreatedAt)
+	require.Equal(t, parcel, gotParcel)
 
 	// delete
 	// удалите добавленную посылку, убедитесь в отсутствии ошибки
@@ -77,9 +72,7 @@ func TestSetAddress(t *testing.T) {
 	// prepare
 	db, err := sql.Open("sqlite", "tracker.db") // настройте подключение к БД
 
-	if err != nil {
-		assert.NoError(t, err)
-	}
+	assert.NoError(t, err)
 
 	defer db.Close()
 
@@ -112,9 +105,7 @@ func TestSetStatus(t *testing.T) {
 	// prepare
 	db, err := sql.Open("sqlite", "tracker.db") // настройте подключение к БД
 
-	if err != nil {
-		assert.NoError(t, err)
-	}
+	assert.NoError(t, err)
 
 	defer db.Close()
 
@@ -146,9 +137,7 @@ func TestGetByClient(t *testing.T) {
 	// prepare
 	db, err := sql.Open("sqlite", "tracker.db") // настройте подключение к БД
 
-	if err != nil {
-		assert.NoError(t, err)
-	}
+	assert.NoError(t, err)
 
 	defer db.Close()
 
